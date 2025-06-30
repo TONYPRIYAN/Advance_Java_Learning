@@ -5,7 +5,7 @@ import com.springlearn.learn_spring.game.Mario;
 import com.springlearn.learn_spring.game.NFS;
 import com.springlearn.learn_spring.game.SubwaySurfers;
 
-public class AppGamingBasicJava {
+public class App01GamingBasicJava {
 
 	public static void main(String[] args) {
 		//var game = new Mario();
