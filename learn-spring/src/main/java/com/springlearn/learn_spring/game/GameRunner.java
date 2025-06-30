@@ -3,9 +3,9 @@ package com.springlearn.learn_spring.game;
 public class GameRunner {
 	
 	//Mario game;
-		NFS game;
+		GamingConsole game;
 	
-	public GameRunner(NFS game)
+	public GameRunner(GamingConsole game)
 	{
 		this.game = game;
 	}

@@ -1,6 +1,6 @@
 package com.springlearn.learn_spring.game;
 
-public class NFS {
+public class NFS implements GamingConsole {
 	
 	public void up()
 	{
