@@ -3,7 +3,7 @@ package com.springlearn.learn_spring;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-record Person (String name,int age) {}
+record Person (String name,int age,Address address) {}
 record Address (String place,String city) {}
 
 @Configuration
@@ -12,7 +12,7 @@ public class HelloWorldConfig
 	@Bean
 	String name()
 	{
-		return "Its Tony";
+		return "Tony";
 	}
 	
 	
@@ -22,11 +22,28 @@ public class HelloWorldConfig
 		return 21;
 	}
 	
-	@Bean(name="batman")
-	public Person person()
+//	@Bean(name="batman")
+//	public Person person()
+//	{
+//		return new Person("Bruce",29);
+//	}
+	
+	
+	//Directly Calling using Methods
+//	@Bean
+//	public Person person()
+//	{
+//		return new Person(name(),age(),address());
+//	}
+	
+	  
+	//Passing Parameters
+	@Bean
+	public Person person(String name,int age,Address address)
 	{
-		return new Person("Bruce",29);
+		return new Person(name,age,address);
 	}
+	
 	
 	@Bean
 	public Address address()
