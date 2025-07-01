@@ -22,7 +22,7 @@ public class HelloWorldConfig
 		return 21;
 	}
 	
-	@Bean
+	@Bean(name="batman")
 	public Person person()
 	{
 		return new Person("Bruce",29);
