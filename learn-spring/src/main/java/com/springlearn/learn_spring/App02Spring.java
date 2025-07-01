@@ -1,5 +1,7 @@
 package com.springlearn.learn_spring;
 
+import java.util.Arrays;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.aot.*;
 
@@ -12,9 +14,14 @@ public class App02Spring {
 		
 //		System.out.println(context.getBean("name"));
 //		System.out.println(context.getBean("age"));
-		System.out.println(context.getBean("person"));//By Type
+		//System.out.println(context.getBean("person"));//By Type
 		//System.out.println(context.getBean("batman"));//By Custom name
 		//System.out.println(context.getBean("address"));
+		
+		
+		
+		Arrays.stream(context.getBeanDefinitionNames())
+		.forEach(System.out::println);
 
 	}
 
