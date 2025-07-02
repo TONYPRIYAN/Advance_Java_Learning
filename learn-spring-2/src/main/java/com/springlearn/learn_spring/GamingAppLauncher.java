@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan("com.springlearn.learn_spring.game")
-public class App02GamingSpring {
+public class GamingAppLauncher {
 	
 	
 	
@@ -18,7 +18,7 @@ public class App02GamingSpring {
 	public static void main(String[] args) 
 	{
 	
-		try (var context = new AnnotationConfigApplicationContext(App02GamingSpring.class)) {
+		try (var context = new AnnotationConfigApplicationContext(GamingAppLauncher.class)) {
 			//context.getBean(GamingConsole.class).right();
 			context.getBean(GameRunner.class).run();
 		} catch (BeansException e) {
