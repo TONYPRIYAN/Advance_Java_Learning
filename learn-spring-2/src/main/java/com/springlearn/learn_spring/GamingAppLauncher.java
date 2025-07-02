@@ -11,10 +11,6 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan("com.springlearn.learn_spring.game")
 public class GamingAppLauncher {
 	
-	
-	
-	
-
 	public static void main(String[] args) 
 	{
 	

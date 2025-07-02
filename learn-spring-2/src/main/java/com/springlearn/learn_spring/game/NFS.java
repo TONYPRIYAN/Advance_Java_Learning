@@ -1,7 +1,9 @@
 package com.springlearn.learn_spring.game;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
+@Primary
 @Component
 public class NFS implements GamingConsole {
 	
