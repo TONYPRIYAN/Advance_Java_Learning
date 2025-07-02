@@ -1,5 +1,8 @@
 package com.springlearn.learn_spring.game;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class NFS implements GamingConsole {
 	
 	public void up()

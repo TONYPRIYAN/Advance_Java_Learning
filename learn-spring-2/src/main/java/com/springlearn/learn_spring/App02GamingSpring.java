@@ -4,31 +4,16 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.springlearn.learn_spring.game.GameRunner;
-import com.springlearn.learn_spring.game.GamingConsole;
-
-
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-
-import com.springlearn.learn_spring.game.Mario;
-
 @Configuration
+@ComponentScan("com.springlearn.learn_spring.game")
 public class App02GamingSpring {
 	
-	@Bean
-	public GamingConsole game()
-	{
-		var game = new Mario();
-		return game;
-	}
 	
-	@Bean
-	public GameRunner gamerunner(GamingConsole game)
-	{
-		var gamerunner = new GameRunner(game);
-		return gamerunner;
-	}
+	
+	
 
 	public static void main(String[] args) 
 	{
