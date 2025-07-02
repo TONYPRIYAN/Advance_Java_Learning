@@ -18,7 +18,7 @@ class BusinessClass
 	Depen2 depen2;
 	
 	
-@Autowired
+//@Autowired
 public BusinessClass(Depen1 depen1, Depen2 depen2) {
 		super();
 		this.depen1 = depen1;
