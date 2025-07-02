@@ -1,9 +1,7 @@
-package com.springlearn.learn_spring;
+package com.springlearn.learn_spring.game;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import com.springlearn.learn_spring.game.GameRunner;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
