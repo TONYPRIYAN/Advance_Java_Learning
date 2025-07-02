@@ -15,10 +15,14 @@ public class BusinessCalc
 	{
 	
 		try (var context = new AnnotationConfigApplicationContext(BusinessCalc.class)) {
-			//context.getBean(GamingConsole.class).right();
+			
 			
 			Arrays.stream(context.getBeanDefinitionNames())
 			.forEach(System.out::println);
+			
+			System.out.println(context.getBean(BusinessService.class).findmax());
+			
+			
 		}
 		}
 		
