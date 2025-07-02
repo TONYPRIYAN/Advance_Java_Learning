@@ -11,12 +11,37 @@ import org.springframework.stereotype.Component;
 @Component
 class BusinessClass
 {
-	@Autowired
+	
 	Depen1 depen1;
 	
-	@Autowired
+
 	Depen2 depen2;
 	
+	
+@Autowired
+public BusinessClass(Depen1 depen1, Depen2 depen2) {
+		super();
+		this.depen1 = depen1;
+		this.depen2 = depen2;
+	}
+
+
+
+//	@Autowired
+//	public void setDepen1(Depen1 depen1) {
+//		this.depen1 = depen1;
+//	}
+//
+//
+//
+//	@Autowired
+//	public void setDepen2(Depen2 depen2) {
+//		this.depen2 = depen2;
+//	}
+
+
+
+
 	public String toString()
 	{
 		StringBuffer sb = new StringBuffer();
