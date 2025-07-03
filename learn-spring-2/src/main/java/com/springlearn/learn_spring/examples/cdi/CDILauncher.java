@@ -8,8 +8,11 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 
-@Component
+
+@Named//@Component
 class ClassA
 {
 	ClassB cls;
@@ -17,19 +20,21 @@ class ClassA
 	
 
 	public ClassB getCls() {
+		System.out.println("Setter");
 		return cls;
 	}
 
-	@Autowired
+	@Inject//@Autowired
 	public void setCls(ClassB cls) 
 	{
+		
 		this.cls = cls;
 	}
 	
 	
 }
 
-@Component
+@Named//@Component
 class ClassB
 {
 	
