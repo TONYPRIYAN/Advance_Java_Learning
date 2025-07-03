@@ -28,6 +28,11 @@ class ClassB
 		this.classa = classa;
 	}
 	
+	public void run()
+	{
+		System.out.println("Running 2");
+	}
+	
 	
 	
 	
@@ -50,6 +55,8 @@ public class LazyInit {
 			
 //			Arrays.stream(context.getBeanDefinitionNames())
 //			.forEach(System.out::println);
+			
+			context.getBean(ClassB.class).run();
 		}
 		}
 		
