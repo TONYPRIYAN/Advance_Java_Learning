@@ -15,7 +15,9 @@ public class IdentityController
 		return Arrays.asList
 		(
 				new Identity(1,"Bruce Wayne","Batman"),
-				new Identity(2,"Clark Kent","Superman")
+				new Identity(2,"Clark Kent","Superman"),
+				new Identity(3,"Barry Allen","Flash")
+				
 				
 				);
 	}
