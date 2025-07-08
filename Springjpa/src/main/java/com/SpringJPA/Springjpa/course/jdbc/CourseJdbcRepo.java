@@ -1,6 +1,7 @@
 package com.SpringJPA.Springjpa.course.jdbc;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -25,6 +26,12 @@ public class CourseJdbcRepo
 		where id = ?;
 			""";
 	
+	public static String select_query = 
+			"""
+		select from course
+		where id = ?;
+			""";
+	
 	
 	public void insert(Course course)
 	{
@@ -34,6 +41,14 @@ public class CourseJdbcRepo
 	public void delete(long id)
 	{
 		jdbctemp.update(delete_query,id);
+	}
+	
+	public Course findId(long id)
+	{
+		return jdbctemp.queryForObject(select_query,
+				new BeanPropertyRowMapper<>(Course.class),id);
+		
+		
 	}
 	
 }
