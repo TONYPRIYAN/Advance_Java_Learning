@@ -11,6 +11,13 @@ public class Course
 	
 	
 
+	public Course() {
+		
+	}
+
+
+
+
 	public Course(long id, String name, String author) {
 		super();
 		this.id = id;
@@ -28,13 +35,6 @@ public class Course
 
 
 
-	public void setId(long id) {
-		this.id = id;
-	}
-
-
-
-
 	public String getName() {
 		return name;
 	}
@@ -42,22 +42,8 @@ public class Course
 
 
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-
-
 	public String getAuthor() {
 		return author;
-	}
-
-
-
-
-	public void setAuthor(String author) {
-		this.author = author;
 	}
 
 
