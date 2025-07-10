@@ -6,23 +6,27 @@ import org.springframework.stereotype.Component;
 
 import com.SpringJPA.Springjpa.course.Course;
 import com.SpringJPA.Springjpa.course.jpa.CourseJpaRepo;
+import com.SpringJPA.Springjpa.course.springjpa.SpringJpaRepo;
 
 
 @Component
 public class CourseJpacmd implements CommandLineRunner
 {
+//	@Autowired
+//	CourseJpaRepo repo;
 	@Autowired
-	CourseJpaRepo repo;
+	private SpringJpaRepo repo;
 
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		repo.insert(new Course(1,"Spring-Boot","Tony"));
-		repo.insert(new Course(2,"DSA","Tony"));
-		repo.insert(new Course(3,"Apititude","Tony"));
+		repo.save(new Course(1,"Spring-Boot","Tony"));
+		repo.save(new Course(2,"DSA","Tony"));
+		repo.save(new Course(3,"Apititude","Tony"));
 		
-		repo.delete(3);
-		System.out.println(repo.find(2));
+		repo.deleteById(3l);
+		System.out.println(repo.findById(2l));
+		
 		
 	}
 
