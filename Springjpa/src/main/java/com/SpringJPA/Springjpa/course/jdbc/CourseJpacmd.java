@@ -21,7 +21,7 @@ public class CourseJpacmd implements CommandLineRunner
 		repo.insert(new Course(2,"DSA","Tony"));
 		repo.insert(new Course(3,"Apititude","Tony"));
 		
-		//repo.delete(3);
+		repo.delete(3);
 		System.out.println(repo.find(2));
 		
 	}

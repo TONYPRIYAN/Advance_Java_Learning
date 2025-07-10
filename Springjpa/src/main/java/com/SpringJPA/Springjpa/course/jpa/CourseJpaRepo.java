@@ -29,8 +29,8 @@ public class CourseJpaRepo
 	
 	public void delete(long id)
 	{
-		Course c =  em.find(Course.class, id);
-		em.remove(c);
+		 
+		em.remove(em.find(Course.class, id));
 	}
 	
 	
