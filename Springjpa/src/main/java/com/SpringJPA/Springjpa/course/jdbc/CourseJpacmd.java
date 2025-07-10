@@ -25,7 +25,12 @@ public class CourseJpacmd implements CommandLineRunner
 		repo.save(new Course(3,"Apititude","Tony"));
 		
 		repo.deleteById(3l);
-		System.out.println(repo.findById(2l));
+//		System.out.println(repo.findById(2l));
+//		
+//		System.out.println(repo.count());
+		
+		System.out.println(repo.findByAuthor("Tony"));
+		System.out.println(repo.findByName("DSA"));
 		
 		
 	}
