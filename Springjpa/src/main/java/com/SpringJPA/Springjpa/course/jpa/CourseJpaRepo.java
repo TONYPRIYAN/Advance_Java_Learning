@@ -24,12 +24,12 @@ public class CourseJpaRepo
 	
 	public Course find(long id)
 	{
-		return em.find(Course.class, em);
+		return em.find(Course.class, id);
 	}
 	
 	public void delete(long id)
 	{
-		Course c =  em.find(Course.class, em);
+		Course c =  em.find(Course.class, id);
 		em.remove(c);
 	}
 	

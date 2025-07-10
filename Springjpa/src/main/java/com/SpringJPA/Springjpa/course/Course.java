@@ -11,10 +11,10 @@ public class Course
 	@Id
 	private long id;
 	
-	@Column(name="name!")
+	//@Column(name="name")
 	private String name;
 	
-	@Column(name="author")
+	//@Column(name="author")
 	private String author;
 	
 	
