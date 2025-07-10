@@ -5,13 +5,14 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.SpringJPA.Springjpa.course.Course;
+import com.SpringJPA.Springjpa.course.jpa.CourseJpaRepo;
 
 
 @Component
-public class CourseJdbccmd implements CommandLineRunner
+public class CourseJpacmd implements CommandLineRunner
 {
 	@Autowired
-	CourseJdbcRepo repo;
+	CourseJpaRepo repo;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -21,7 +22,7 @@ public class CourseJdbccmd implements CommandLineRunner
 		repo.insert(new Course(3,"Apititude","Tony"));
 		
 		//repo.delete(3);
-		System.out.println(repo.findId(2));
+		System.out.println(repo.find(2));
 		
 	}
 
