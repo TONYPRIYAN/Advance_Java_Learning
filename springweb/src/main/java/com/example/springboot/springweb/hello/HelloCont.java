@@ -2,7 +2,6 @@ package com.example.springboot.springweb.hello;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HelloCont 
@@ -12,7 +11,7 @@ public class HelloCont
 	
 	public String helloJsp()
 	{
-		return "Hello";
+		return "sayHello";
 		
 	}
 	
