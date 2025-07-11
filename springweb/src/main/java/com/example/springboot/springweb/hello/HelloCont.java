@@ -8,12 +8,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HelloCont 
 {
 	
-	@RequestMapping("hello")
-	@ResponseBody
-	public String hello()
+	@RequestMapping("hello-jsp")
+	
+	public String helloJsp()
 	{
-		return "Hey Its Tony!";
+		return "Hello";
 		
 	}
+	
+	
 
 }
