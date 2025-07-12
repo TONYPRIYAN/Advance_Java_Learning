@@ -7,6 +7,6 @@
 <title>Login</title>
 </head>
 <body>
-<p>This is a Login Page</p>
+<p>Welcome Mr.${name} !</p>
 </body>
 </html>
