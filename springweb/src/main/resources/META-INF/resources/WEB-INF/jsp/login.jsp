@@ -8,6 +8,7 @@
 </head>
 <body>
 	Welcome 
+	<p style="background-color:tomato;"><b>${errmsg}</b></p>
 	<form method="post">
 	Name:<input type="text" name="name">
 	Password:<input type="password" name="pwd">

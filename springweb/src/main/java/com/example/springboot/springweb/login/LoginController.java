@@ -34,6 +34,7 @@ public class LoginController
 			map.put("pwd", pwd);
 			return "welcome";
 		}
+		map.put("errmsg", "Wrong Credentials");
 		return "login";
 		
 	}
