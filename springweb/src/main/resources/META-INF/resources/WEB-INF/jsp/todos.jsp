@@ -8,6 +8,7 @@
 <body>
 
 <div> 
+	<p>Hello ${name}!</p>
 	${todolist} 
 </div>
 

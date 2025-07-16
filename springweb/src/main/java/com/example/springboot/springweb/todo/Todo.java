@@ -63,6 +63,18 @@ public class Todo
 		this.done = done;
 	}
 	
+	@Override
+	public String toString() {
+	    return "Todo{" +
+	            "id=" + id +
+	            ", username='" + usrname + '\'' +
+	            ", description='" + desc + '\'' +
+	            ", targetDate=" + target +
+	            ", done=" + done +
+	            '}';
+	}
+
+	
 	
 
 }
