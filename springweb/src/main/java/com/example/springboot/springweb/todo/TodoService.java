@@ -1,12 +1,16 @@
 package com.example.springboot.springweb.todo;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class TodoService 
 {
 	
-	private static List<Todo> todos;
+	private static List<Todo> todos = new ArrayList<Todo>();
 	
 	static
 	{
