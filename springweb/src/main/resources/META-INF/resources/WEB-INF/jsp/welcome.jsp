@@ -9,6 +9,7 @@
 <body>
 <div>
 	<p>Welcome to Mr.${name} </p>
+	<hr>
 	<a href="list-todos">View the List</a>
 	</div>
 	
