@@ -7,6 +7,9 @@
 <title>Login</title>
 </head>
 <body>
+<div class="container">
+
+
 	Welcome 
 	<p style="color:tomato;"><b>${errmsg}</b></p>
 	<form method="post">
@@ -14,5 +17,6 @@
 	Password:<input type="password" name="pwd">
 	<input type="submit">
 	</form>
+</div>
 </body>
 </html>

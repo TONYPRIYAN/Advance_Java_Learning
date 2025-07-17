@@ -6,15 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" >
-<script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-<script src="webjars/jquery/3.6.0/jquery.min.js"></script>
+
 <title>Displaying Todos</title>
 </head>
 <body>
 
-<div> 
-	<H3>Hello ${name}!</H3>
-	<table border=1>
+<div class="container"> 
+	<H3>Todos</H3>
+	<table border=1 class="table">
 		<thead>
 			<tr>
 				<th>Id</th>
@@ -34,8 +33,11 @@
 			
 		
 		</c:forEach>
-	</table>
+	</table>`
 </div>
+
+<script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+<script src="webjars/jquery/3.6.0/jquery.min.js"></script>
 
 
 
