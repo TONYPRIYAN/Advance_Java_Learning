@@ -1,11 +1,13 @@
 package com.example.springboot.springweb.todo;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
@@ -45,10 +47,11 @@ public class TodoController
 	}
 	
 	@RequestMapping(value="add-todos",method = RequestMethod.POST)
-	public String addTodos()
+	public String addTodos(@RequestParam String desc,ModelMap map)
 	{
-		
-		return "todos";
+		String usrname = (String) map.get("name");
+		todoserv.addTodo(usrname, desc, LocalDate.now().plusMonths(2), false);
+		return "redirect:list-todos";
 	}
 
 }
