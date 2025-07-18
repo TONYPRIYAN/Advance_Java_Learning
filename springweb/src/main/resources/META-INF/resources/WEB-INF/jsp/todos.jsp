@@ -29,6 +29,7 @@
 				<td>${todo.desc}</td>
 				<td>${todo.target}</td>
 				<td>${todo.done}</td>
+				<td><a href="delete-todo?id=${todo.id}" class="btn btn-warning">Delete</a></td>
 			</tr>
 			
 		
