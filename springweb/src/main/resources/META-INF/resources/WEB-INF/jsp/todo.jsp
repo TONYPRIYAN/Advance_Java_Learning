@@ -15,11 +15,13 @@
 
 	<h1> Enter Todo Details</h1>
 	<form:form method="post" modelAttribute="todo">
-	<!--  Enter ID: <form:input type="hidden" path="id"  required="required"/> -->
+	<form:input type="hidden" path="id"  required="required"/>
 	
-	Enter Description: <form:input type="text" path="desc" name="desc" required="required"/>
+	Enter Description: <form:input type="text" path="desc" />
+	<form:errors path="desc" cssClass="text-warning"/>
 	<br>
-	<!--   Status: <form:input type="hidden" path="done"  required="required"/> -->
+	<form:input type="hidden" path="done"  required="required"/>
+	
 	<input type="submit" class="btn btn-success"/>
 	
 	</form:form>

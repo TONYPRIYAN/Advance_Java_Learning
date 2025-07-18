@@ -1,11 +1,15 @@
 package com.example.springboot.springweb.todo;
 
 import java.time.LocalDate;
+
+import jakarta.validation.constraints.Size;
 public class Todo 
 {
 	
-	private int id;
+	private Integer id;
 	private String usrname;
+	
+	@Size(min = 10,max = 50,message = "Character range from 10 - 50")
 	private String desc;
 	private LocalDate target;
 	private boolean done;
