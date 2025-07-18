@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,11 +14,15 @@
 <div class="container">
 
 	<h1> Enter Todo Details</h1>
-	<form method="post">
-	Enter Description: <input type="text" name="desc" required="required"/>
+	<form:form method="post" modelAttribute="todo">
+	<!--  Enter ID: <form:input type="hidden" path="id"  required="required"/> -->
+	
+	Enter Description: <form:input type="text" path="desc" name="desc" required="required"/>
+	<br>
+	<!--   Status: <form:input type="hidden" path="done"  required="required"/> -->
 	<input type="submit" class="btn btn-success"/>
 	
-	</form>
+	</form:form>
 </div>
 
 <script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
