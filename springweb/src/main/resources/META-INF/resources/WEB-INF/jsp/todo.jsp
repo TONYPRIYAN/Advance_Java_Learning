@@ -13,7 +13,7 @@
 
 	<h1> Enter Todo Details</h1>
 	<form method="post">
-	Enter Description: <input type="text" name="desc"/>
+	Enter Description: <input type="text" name="desc" required="required"/>
 	<input type="submit" class="btn btn-success"/>
 	
 	</form>
