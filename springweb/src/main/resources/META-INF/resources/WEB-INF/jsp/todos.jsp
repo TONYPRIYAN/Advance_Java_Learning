@@ -30,6 +30,8 @@
 				<td>${todo.target}</td>
 				<td>${todo.done}</td>
 				<td><a href="delete-todo?id=${todo.id}" class="btn btn-warning">Delete</a></td>
+				<td><a href="update-todo?id=${todo.id}" class="btn btn-info">Update</a></td>
+				
 			</tr>
 			
 		

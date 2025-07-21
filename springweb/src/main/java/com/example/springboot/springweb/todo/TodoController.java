@@ -62,7 +62,7 @@ public class TodoController
 	    todoserv.addTodo(usrname, todo.getDesc(), LocalDate.now().plusMonths(2), false);
 	    return "redirect:list-todos";
 	}
-	
+
 	@RequestMapping("delete-todo")
 	public String deleteTodo(@RequestParam int id)
 	{
@@ -70,5 +70,14 @@ public class TodoController
 		
 		return "redirect:list-todos";
 	}
+	
+	@RequestMapping("update-todo")
+	public String updateTodo(@RequestParam int id)
+	{
+		todoserv.updateTodo(id);
+		
+		return "redirect:list-todos";
+	}
+
 
 }
