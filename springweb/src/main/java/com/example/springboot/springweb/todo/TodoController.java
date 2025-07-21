@@ -72,11 +72,13 @@ public class TodoController
 	}
 	
 	@RequestMapping("update-todo")
-	public String updateTodo(@RequestParam int id)
+	public String updateTodo(@RequestParam int id,ModelMap map)
 	{
-		todoserv.updateTodo(id);
+		Todo todo = todoserv.findById(id);
+		map.addAttribute("todo",todo);
+		//todoserv.updateTodo(id);
 		
-		return "redirect:list-todos";
+		return "todo";
 	}
 
 
