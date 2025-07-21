@@ -71,14 +71,27 @@ public class TodoController
 		return "redirect:list-todos";
 	}
 	
-	@RequestMapping("update-todo")
-	public String updateTodo(@RequestParam int id,ModelMap map)
+	@RequestMapping(value="update-todo",method = RequestMethod.GET)
+	public String showupdateTodo(@RequestParam int id,ModelMap map)
 	{
 		Todo todo = todoserv.findById(id);
 		map.addAttribute("todo",todo);
 		//todoserv.updateTodo(id);
 		
 		return "todo";
+	}
+	
+	@RequestMapping(value="update-todo",method = RequestMethod.POST)
+	public String updateTodos(ModelMap map, @Valid Todo todo, BindingResult result)
+	{
+	    if (result.hasErrors()) {
+	        return "todo"; 
+	    }
+
+	    String usrname = (String) map.get("name");
+	    todo.setUsrname(usrname);
+	    todoserv.updateTodo(todo);
+	    return "redirect:list-todos";
 	}
 
 
