@@ -9,36 +9,25 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
 @SessionAttributes("name")
-public class LoginController
+public class WelcomeController
 {
 	
 	private AuthCreds authCreds;
 	
 	
 	
-	public LoginController(AuthCreds authCreds) {
+	public WelcomeController(AuthCreds authCreds) {
 		super();
 		this.authCreds = authCreds;
 	}
 
-	@RequestMapping(value="login",method = RequestMethod.GET)
-	public String Login()
+	@RequestMapping(value="/",method = RequestMethod.GET)
+	public String welcomePage(ModelMap map)
 	{
-		return "login";
+		map.put("name","Tony");
+		return "welcome";
 	}
 	
-	@RequestMapping(value="login",method = RequestMethod.POST)
-	public String welcome(@RequestParam String name,@RequestParam String pwd,ModelMap map)
-	{
-		if(authCreds.auth(name, pwd))
-		{
-			map.put("name",name);
-			map.put("pwd", pwd);
-			return "welcome";
-		}
-		map.put("errmsg", "Wrong Credentials");
-		return "login";
-		
-	}
+	
 
 }
