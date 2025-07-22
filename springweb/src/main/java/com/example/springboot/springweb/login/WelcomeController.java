@@ -1,5 +1,7 @@
 package com.example.springboot.springweb.login;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,9 +26,19 @@ public class WelcomeController
 	@RequestMapping(value="/",method = RequestMethod.GET)
 	public String welcomePage(ModelMap map)
 	{
-		map.put("name","Tony");
+		map.put("name",getUsername());
 		return "welcome";
 	}
+	
+	public String getUsername()
+	{
+		Authentication authentication = 
+		SecurityContextHolder.getContext().getAuthentication();
+		
+		return authentication.getName();
+	}
+	
+	
 	
 	
 

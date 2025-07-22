@@ -1,7 +1,5 @@
 package com.example.springboot.springweb.security;
 
-import java.util.function.Function;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -19,7 +17,7 @@ public class SpringSecurityConfiguration
 	public InMemoryUserDetailsManager createUserDetails()
 	{
 		
-		UserDetails userDetails = User.withUsername("Tony")
+		UserDetails userDetails = User.withUsername("TonyPriyan")
 		        .password(passwordEncoder().encode("Stark"))
 		        .roles("USER", "ADMIN")
 		        .build();

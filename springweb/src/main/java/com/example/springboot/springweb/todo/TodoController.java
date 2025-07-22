@@ -3,6 +3,8 @@ package com.example.springboot.springweb.todo;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -37,15 +39,22 @@ public class TodoController
 	@RequestMapping("list-todos")
 	public String displayTodos(ModelMap map)
 	{
-		List<Todo> todolist = todoserv.findByUsernames("Tony");
+		String username  = getUsername(map);
+		List<Todo> todolist = todoserv.findByUsernames(username);
 		map.addAttribute("todolist", todolist);
 		return "todos";
+	}
+
+
+
+	private String getLoggedInUsername(ModelMap map) {
+		return (String) map.get("name");
 	}
 	
 	@RequestMapping(value="add-todos",method = RequestMethod.GET)
 	public String showTodos(ModelMap map)
 	{
-		String user = (String) map.get("name");
+		String user = getUsername(map);
 		Todo todo = new Todo(0, user,"", LocalDate.now().plusMonths(2), false);
 		map.put("todo",todo);
 		return "todo";
@@ -58,9 +67,15 @@ public class TodoController
 	        return "todo"; 
 	    }
 
-	    String usrname = (String) map.get("name");
+	    String usrname = getUsername(map);
 	    todoserv.addTodo(usrname, todo.getDesc(), todo.getTarget(), false);
 	    return "redirect:list-todos";
+	}
+
+
+
+	private String getUsername(ModelMap map) {
+		return getLoggedInUsername(map);
 	}
 
 	@RequestMapping("delete-todo")
@@ -88,11 +103,19 @@ public class TodoController
 	        return "todo"; 
 	    }
 
-	    String usrname = (String) map.get("name");
+	    String usrname = getUsername(map);
 	    todo.setUsrname(usrname);
 	    todoserv.updateTodo(todo);
 	    return "redirect:list-todos";
 	}
 
+	public String getUsername()
+	{
+		Authentication authentication = 
+		SecurityContextHolder.getContext().getAuthentication();
+		
+		return authentication.getName();
+	}
+	
 
 }
