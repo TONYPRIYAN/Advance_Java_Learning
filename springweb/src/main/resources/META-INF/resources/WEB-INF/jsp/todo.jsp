@@ -17,9 +17,9 @@
 	<h1> Enter Todo Details</h1>
 	<form:form method="post" modelAttribute="todo">
 		<fieldset class ="mb-3">
-			<form:label path="desc">Description</form:label>
+			<form:label path="description">Description</form:label>
 			<form:input type="text" path="desc" required="required"/>
-			<form:errors path="desc" cssClass="text-warning"/>
+			<form:errors path="description" cssClass="text-warning"/>
 		</fieldset>
 		
 		<fieldset class ="mb-3">

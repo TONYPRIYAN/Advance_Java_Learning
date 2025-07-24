@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import jakarta.validation.Valid;
 
-@Controller
+//@Controller
 @SessionAttributes("name")
 public class TodoController  
 {
@@ -68,7 +68,7 @@ public class TodoController
 	    }
 
 	    String usrname = getUsername(map);
-	    todoserv.addTodo(usrname, todo.getDesc(), todo.getTarget(), false);
+	    todoserv.addTodo(usrname, todo.getDescription(), todo.getTarget(), false);
 	    return "redirect:list-todos";
 	}
 
