@@ -38,8 +38,16 @@ public class TodoControllerJPA {
     @RequestMapping(value = "add-todos", method = RequestMethod.GET)
     public String showAddTodoPage(ModelMap map) {
         String username = getLoggedInUsername();
-        // Use the corrected constructor with "description"
-        Todo todo = new Todo(0, username, "", LocalDate.now().plusMonths(2), false);
+        
+        // Use the default constructor. The ID will be null by default.
+        Todo todo = new Todo(); 
+        
+        // Set the other properties
+        todo.setUsrname(username);
+        todo.setDescription(""); // Set a default empty description
+        todo.setTarget(LocalDate.now().plusMonths(2));
+        todo.setDone(false);
+        
         map.put("todo", todo);
         return "todo";
     }

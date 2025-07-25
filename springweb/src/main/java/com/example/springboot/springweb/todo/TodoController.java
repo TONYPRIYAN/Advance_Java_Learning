@@ -20,6 +20,8 @@ import jakarta.validation.Valid;
 public class TodoController  
 {
 	
+	TodoRepository todorepo;
+	
 	private TodoService todoserv;
 
 	public TodoController(TodoService todoserv) {
@@ -68,7 +70,9 @@ public class TodoController
 	    }
 
 	    String usrname = getUsername(map);
-	    todoserv.addTodo(usrname, todo.getDescription(), todo.getTarget(), false);
+	    todo.setUsrname(usrname);
+	    todorepo.save(todo);
+	    //todoserv.addTodo(usrname, todo.getDescription(), todo.getTarget(), todo.isDone());
 	    return "redirect:list-todos";
 	}
 
