@@ -3,6 +3,7 @@ package com.example.rest.webservices.rest_web_services.user;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -20,6 +21,12 @@ public class UserResource
 	public List<User> retrieveall()
 	{
 		return service.findAll();
+	}
+	
+	@GetMapping("/users/{id}")
+	public User retrieveUser(@PathVariable int id)
+	{
+		return service.findOne(id);
 	}
 	
 
