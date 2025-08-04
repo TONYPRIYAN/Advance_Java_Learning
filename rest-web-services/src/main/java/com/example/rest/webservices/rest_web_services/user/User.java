@@ -12,7 +12,7 @@ public class User
 	
 	
 	
-	public User(String name, Integer id, LocalDate dob) {
+	public User(Integer id,String name, LocalDate dob) {
 		super();
 		this.name = name;
 		this.id = id;
