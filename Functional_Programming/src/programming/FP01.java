@@ -9,8 +9,8 @@ public class FP01 {
 		//printall(List.of(1,2,3,4,5,6,7));
 		//printeven(List.of(1,2,3,4,5,6,7,8,9,10));
 		//specificCourse(List.of("Java","Python","API","Spring"));
-		//CourseChars(List.of("Java","Python","API","Spring"));
-		Squarenum(List.of(1,2,3,4,5,6,7,8,9,10));
+		CourseChars(List.of("Java","Python","API","Spring"));
+		//Squarenum(List.of(1,2,3,4,5,6,7,8,9,10));
 	}
 	
 //	private static boolean iseven(int num)
@@ -50,18 +50,28 @@ public class FP01 {
 			.filter(course -> course.equals("Spring")).
 			forEach(System.out::println);
 	}
-	private static void CourseChars(List<String> list)
-	{
-		list.stream()
-			.filter(course -> course.length() >= 4).
-			forEach(System.out::println);
-	}
+//	private static void CourseChars(List<String> list)
+//	{
+//		list.stream()
+//			.filter(course -> course.length() >= 4).
+//			forEach(System.out::println);
+//	}
 	
 	private static void Squarenum(List<Integer> list)
 	{
 		list.stream()
-			.map(x -> x*x)
+			.filter(num -> num%2 > 0)
+			.map(x -> Math.pow(x,3))
 			.forEach(System.out::println);
 	}
+	
+	private static void CourseChars(List<String> list)
+	{
+		list.stream()
+			.map(x -> x.length()).
+			forEach(System.out::println);
+	}
+	
+	
 
 }
