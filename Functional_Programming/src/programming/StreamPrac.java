@@ -29,13 +29,17 @@ public class StreamPrac {
 //		arr.forEach(System.out::println);
 		
 		//Stream Builder
-		Stream.Builder<String> builder = Stream.builder();
-		builder.add("Superman");
-		builder.add("Batman");
-		builder.add("Spiderman");
+//		Stream.Builder<String> builder = Stream.builder();
+//		builder.add("Superman");
+//		builder.add("Batman");
+//		builder.add("Spiderman");
+//		
+//		Stream<String> superheros = builder.build();
+//		superheros.forEach(System.out::println);
 		
-		Stream<String> superheros = builder.build();
-		superheros.forEach(System.out::println);
+		//Stream Generate
+		Stream<Double> nums = Stream.generate(Math :: random).limit(10);
+		nums.forEach(System.out::println);
 		
 		
 	}
