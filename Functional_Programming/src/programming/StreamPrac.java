@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -43,8 +44,18 @@ public class StreamPrac {
 //		nums.forEach(System.out::println);
 		
 		List<Integer> list = List.of(1,2,3,4,5,3,4,5,2,7);
+		
+		//Intermediate
 		//list.stream().distinct().forEach(System.out::println);
-		list.stream().sorted().forEach(System.out::println);
+		//list.stream().sorted().forEach(System.out::println);
+		
+		//Terminal
+		List<Integer> sq = list.stream().map(n -> n*n).collect(Collectors.toList());
+		System.out.println(sq);
+		
+		long count = list.stream().count();
+		System.out.print(count);
+		
 		
 		
 		
