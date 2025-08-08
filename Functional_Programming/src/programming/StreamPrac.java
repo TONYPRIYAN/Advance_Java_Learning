@@ -2,6 +2,7 @@ package programming;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -27,7 +28,7 @@ public class StreamPrac {
 //		int[] num = {1,2,3,4,5,6,7};
 //		IntStream arr = Arrays.stream(num);
 //		arr.forEach(System.out::println);
-		
+		   
 		//Stream Builder
 //		Stream.Builder<String> builder = Stream.builder();
 //		builder.add("Superman");
@@ -38,8 +39,13 @@ public class StreamPrac {
 //		superheros.forEach(System.out::println);
 		
 		//Stream Generate
-		Stream<Double> nums = Stream.generate(Math :: random).limit(10);
-		nums.forEach(System.out::println);
+//		Stream<Double> nums = Stream.generate(Math :: random).limit(10);
+//		nums.forEach(System.out::println);
+		
+		List<Integer> list = List.of(1,2,3,4,5,3,4,5,2,7);
+		//list.stream().distinct().forEach(System.out::println);
+		list.stream().sorted().forEach(System.out::println);
+		
 		
 		
 	}
