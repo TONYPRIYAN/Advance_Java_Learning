@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -58,8 +60,12 @@ public class StreamPrac {
 //		System.out.print(count);
 		
 		
-		UnaryOperator<Integer> uno = x -> x*2;
-		System.out.print(uno.apply(4));
+//		UnaryOperator<Integer> uno = x -> x*2;
+//		System.out.print(uno.apply(4));
+		
+		    Predicate<Integer> predicate  = x -> x % 2 == 1;
+		    
+		    list.stream().filter(predicate).forEach(System.out::println);
 
 		
 		
