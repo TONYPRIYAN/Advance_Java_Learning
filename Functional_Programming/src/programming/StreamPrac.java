@@ -4,11 +4,14 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 public class StreamPrac {
@@ -63,10 +66,20 @@ public class StreamPrac {
 //		UnaryOperator<Integer> uno = x -> x*2;
 //		System.out.print(uno.apply(4));
 		
-		    Predicate<Integer> predicate  = x -> x % 2 == 1;
-		    
-		    list.stream().filter(predicate).forEach(System.out::println);
+//		    Predicate<Integer> predicate  = x -> x % 2 == 1;
+//		    
+//		    list.stream().filter(predicate).forEach(System.out::println);
+		
+//		Supplier<Integer> random = () -> new Random().nextInt(100);
+//		
+//		System.out.println(random.get());
+//		
 
+			long sum  = LongStream.range(0, 100L).parallel().sum();
+			System.out.println(sum);
+			
+			
+			
 		
 		
 	}
