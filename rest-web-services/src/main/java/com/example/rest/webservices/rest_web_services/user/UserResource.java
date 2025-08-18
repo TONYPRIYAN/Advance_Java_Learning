@@ -16,8 +16,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 public class UserResource 
 {
 	private UserDaoService service;
-	private User newuser;
-
 	public UserResource(UserDaoService service) {
 		
 		this.service = service;
@@ -32,7 +30,13 @@ public class UserResource
 	@GetMapping("/users/{id}")
 	public User retrieveUser(@PathVariable int id)
 	{
-		return service.findOne(id);
+		 User user = service.findOne(id);
+		 
+		 if(user == null)
+			 throw new UserNotFoundException("id:"+id);
+		 
+		 
+		 return user;
 	}
 	
 	@PostMapping("/users")
@@ -44,6 +48,7 @@ public class UserResource
 				.path("/{id}")
 				.buildAndExpand(savedUser.getId())
 				.toUri();
+		
 		return ResponseEntity.created(location).build();
 	}
 	
