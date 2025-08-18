@@ -2,6 +2,7 @@ package com.example.rest.webservices.rest_web_services.user;
 
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,9 +33,10 @@ public class UserResource
 	}
 	
 	@PostMapping("/users")
-	public void createUser(@RequestBody User user)
+	public ResponseEntity<User> createUser(@RequestBody User user)
 	{
 		service.save(user);
+		return ResponseEntity.created(null).build();
 	}
 	
 
