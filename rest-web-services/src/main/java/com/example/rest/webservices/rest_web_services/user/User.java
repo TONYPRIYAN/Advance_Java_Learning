@@ -2,16 +2,20 @@ package com.example.rest.webservices.rest_web_services.user;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
 
 public class User 
 {
 	@Size(min=2,message="Name should min 2")
+	@JsonProperty("user_name")
 	private String name;
 	private Integer id;
 	
 	@Past(message="should be past")
+	@JsonProperty("BirthDate")
 	private LocalDate dob;
 	
 	
