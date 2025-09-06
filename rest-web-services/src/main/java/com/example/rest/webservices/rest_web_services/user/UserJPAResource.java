@@ -25,13 +25,13 @@ import jakarta.validation.Valid;
 @RestController
 public class UserJPAResource 
 {
-	private UserDaoService service;
+	//private UserDaoService service;
 	
 	 private UserRepo repo;
 	 
-	public UserJPAResource(UserDaoService service, UserRepo repo) {
+	public UserJPAResource( UserRepo repo) {
 		
-		this.service = service;
+		//this.service = service;
 		this.repo = repo;
 	}
 	
@@ -60,7 +60,7 @@ public class UserJPAResource
 	@PostMapping("/jpa/users")
 	public ResponseEntity<User> createUser(@Valid @RequestBody User user)
 	{
-		User savedUser = service.save(user);
+		User savedUser = repo.save(user);
 		
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest()
 				.path("/{id}")
@@ -73,7 +73,7 @@ public class UserJPAResource
 	@DeleteMapping("/jpa/users/{id}")
 	public void deleteUser(@PathVariable int id)
 	{
-		 service.deleteById(id);
+		 repo.deleteById(id);
 		 
 	}
 	
