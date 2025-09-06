@@ -15,6 +15,11 @@ import jakarta.validation.constraints.Size;
 @Entity(name = "user_details")
 public class User 
 {
+	
+	protected User()
+	{
+		
+	}
 	@Size(min=2,message="Name should min 2")
 	@JsonProperty("user_name")
 	private String name;
