@@ -53,6 +53,18 @@ public class User
 	
 	
 	
+	public List<Post> getUser() {
+		return user;
+	}
+
+
+
+	public void setUser(List<Post> user) {
+		this.user = user;
+	}
+
+
+
 	public String getName() {
 		return name;
 	}
