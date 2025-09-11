@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.example.rest.webservices.rest_web_services.jpa.PostRepo;
 import com.example.rest.webservices.rest_web_services.jpa.UserRepo;
 
 import jakarta.validation.Valid;
@@ -28,10 +29,11 @@ public class UserJPAResource
 	//private UserDaoService service;
 	
 	 private UserRepo repo;
+	 private PostRepo postrepo;
 	 
-	public UserJPAResource( UserRepo repo) {
+	public UserJPAResource( UserRepo repo,PostRepo postrepo) {
 		
-		//this.service = service;
+		this.postrepo = postrepo;
 		this.repo = repo;
 	}
 	
@@ -88,6 +90,29 @@ public class UserJPAResource
 		}
 		 
 		return user.get().getUser();
+	}
+	
+	@PostMapping("/jpa/users/{id}/posts")
+	public ResponseEntity<Object> createpost(@PathVariable int id,@Valid @RequestBody Post post)
+	{
+		Optional<User> user = repo.findById(id);
+		 
+		if(user.isEmpty())
+		{
+			throw new UserNotFoundException("Id:"+id);
+		}
+		 
+		post.setUser(user.get());
+		
+		Post savedPost = postrepo.save(post);
+		
+		URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+				.path("/{id}")
+				.buildAndExpand(savedPost.getId())
+				.toUri();
+		
+		return ResponseEntity.created(location).build();
+
 	}
 	
 
