@@ -28,25 +28,25 @@ public class UserJPAResource
 {
 	//private UserDaoService service;
 	
-	 private UserRepo repo;
+	 private UserRepo userrepo;
 	 private PostRepo postrepo;
 	 
 	public UserJPAResource( UserRepo repo,PostRepo postrepo) {
 		
 		this.postrepo = postrepo;
-		this.repo = repo;
+		this.userrepo = repo;
 	}
 	
 	@GetMapping("/jpa/users")
 	public List<User> retrieveall()
 	{
-		return repo.findAll();
+		return userrepo.findAll();
 	}
 	
 	@GetMapping("/jpa/users/{id}")
 	public EntityModel<User> retrieveUser(@PathVariable int id)
 	{
-		 Optional<User> user = repo.findById(id);
+		 Optional<User> user = userrepo.findById(id);
 		 
 		 if(user.isEmpty())
 			 throw new UserNotFoundException("id:"+id);
@@ -62,7 +62,7 @@ public class UserJPAResource
 	@PostMapping("/jpa/users")
 	public ResponseEntity<User> createUser(@Valid @RequestBody User user)
 	{
-		User savedUser = repo.save(user);
+		User savedUser = userrepo.save(user);
 		
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest()
 				.path("/{id}")
@@ -75,14 +75,14 @@ public class UserJPAResource
 	@DeleteMapping("/jpa/users/{id}")
 	public void deleteUser(@PathVariable int id)
 	{
-		 repo.deleteById(id);
+		 userrepo.deleteById(id);
 		 
 	}
 	
 	@GetMapping("/jpa/users/{id}/posts")
 	public List<Post> retrievepost(@PathVariable int id)
 	{
-		Optional<User> user = repo.findById(id);
+		Optional<User> user = userrepo.findById(id);
 		 
 		if(user.isEmpty())
 		{
@@ -95,7 +95,7 @@ public class UserJPAResource
 	@PostMapping("/jpa/users/{id}/posts")
 	public ResponseEntity<Object> createpost(@PathVariable int id,@Valid @RequestBody Post post)
 	{
-		Optional<User> user = repo.findById(id);
+		Optional<User> user = userrepo.findById(id);
 		 
 		if(user.isEmpty())
 		{
