@@ -17,7 +17,7 @@ public class Post
 	private int id;
 	
 	@Size(min = 10)
-	private String desc;
+	private String description;
 	
 	
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -35,11 +35,11 @@ public class Post
 	}
 
 	public String getDesc() {
-		return desc;
+		return description;
 	}
 
 	public void setDesc(String desc) {
-		this.desc = desc;
+		this.description = desc;
 	}
 
 	public User getUser() {
@@ -52,7 +52,7 @@ public class Post
 
 	@Override
 	public String toString() {
-		return "Post [id=" + id + ", desc=" + desc + "]";
+		return "Post [id=" + id + ", desc=" + description + "]";
 	}
 	
 	
