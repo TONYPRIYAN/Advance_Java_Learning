@@ -1,5 +1,8 @@
 package com.advjava.spring_aop.aopexample.dataservice;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class DataService 
 {
 	
